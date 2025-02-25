@@ -28,7 +28,7 @@ function App() {
     p5.background(0,0,0);
     //設定每秒執行次數 預設是60
     p5.frameRate(60);
-    //設定顏色模式
+    //設定顏色模式 可以讓顏色順暢的轉換
     p5.colorMode(p5.HSB);
     //眼睛的角度
     p5.angleMode(p5.DEFREES);

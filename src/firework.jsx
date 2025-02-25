@@ -2,6 +2,7 @@ import Sketch from 'react-p5';
 import Matter from 'matter-js';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
+import './App.css';
 
 
 function Firework(){
@@ -174,7 +175,7 @@ function Firework(){
     
 
     return(
-			<div>
+			<div className="App">
         <Sketch setup={setup} draw={draw} mousePressed={mousePressed}/>
 				<button onClick={() => navigate('/')}>
           返回首頁
