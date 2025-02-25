@@ -16,6 +16,7 @@ const setup = ( p5, canvasParentRef ) => {
 setup 只會執行一次
 
 draw fuction 預設每秒執行 60 次 想要調整的話可以在 setup 裡面設定
+
 const draw = (p5) => {
     ......
     p5.push();
