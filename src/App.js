@@ -52,9 +52,6 @@ function App() {
       setCount(0);;
     }
     
-    
-    
-    
     //將其註解就會留下行徑軌跡
     
     // p5.background(200);
@@ -98,18 +95,10 @@ function App() {
     p5.rotate(p5.frameCount * 0.012); // 旋轉，使用 frameCount 來創建連續旋轉
     p5.square(-50, -50, 100); // 因為已移動原點，所以座標要調整
     
-    //icon
-    // if(imgRef.current){
-    //   p5.image(imgRef.current, -25, -25, 50, 50);
-    // }
+    
     p5.pop(); // 恢復之前的變換狀態
 
-    // p5.noFill();
-    // p5.push(); // 保存當前的變換狀態
-    // p5.translate(squareX, squareY); // 移動原點到方塊中心
-    // p5.rotate(p5.frameCount * 0.02); // 旋轉，使用 frameCount 來創建連續旋轉
-    // p5.square(-50, -50, 20); // 因為已移動原點，所以座標要調整
-    // p5.pop(); // 恢復之前的變換狀態
+    
 
     //畫左眼
     let leftX = 150;
@@ -146,6 +135,15 @@ function App() {
       />
       <button onClick={() => navigate('/firework')}>
         煙火
+      </button>
+      <button onClick={() => navigate('/flocking')}>
+        群聚
+      </button>
+      <button onClick={() => navigate('/scratch')}>
+        刮刮樂
+      </button>
+      <button onClick={() => navigate('/rainny')}>
+        下雨
       </button>
     </div>
   );

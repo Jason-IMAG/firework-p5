@@ -20,9 +20,9 @@ function Firework(){
         const { Engine, World } = Matter;
 
         const engine = Engine.create();
-        engineRef.current = engine;
-        worldRef.current = engine.world;
-        engine.gravity.y = 0.1;
+        engineRef.current = engine;      //初始化 engineRef
+        worldRef.current = engine.world; //初始化 worldeRef
+        engine.gravity.y = 0.1;          //設定重力
         
         return () => {
             World.clear(worldRef.current);
@@ -42,7 +42,7 @@ function Firework(){
 			  //調整背景透明度可以做到殘影的效果
         p5.background(0,0,0,0.1);
 				
-        //更新物理引擎
+        //更新物理引擎 **關鍵
         if(engineRef.current){
           Matter.Engine.update(engineRef.current);
         }
@@ -111,7 +111,7 @@ function Firework(){
 			) {
 				createFireBall(p5, p5.windowWidth/2 , p5.windowHeight -70);
 				hueRef.current = p5.random(0,255);
-				console.log('發射')
+				
 			}
 		};
 

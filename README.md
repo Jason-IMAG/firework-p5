@@ -27,3 +27,11 @@ const draw = (p5) => {
     ......想要畫的東西
     p5.pop();
 }
+
+結合 matter js 
+
+useEffect 控制引擎初始化及清除 避免重複初始化
+初始化的值用useRef管理 避免更新重新渲染
+在 draw function 裡面要更新引擎 不然物理世界不會動
+
+* 因為 World 是 Engine 的一部分，所以當我們更新 Engine 時，它會自動更新其中的 World 和所有物體。而當我們修改 World（如添加或刪除物體）時，我們實際上是在修改 Engine 的一部分，但這些變化只有在下一次 Engine.update() 時才會計算物理效果

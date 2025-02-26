@@ -4,6 +4,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Firework from './firework';
+import Flocking from './flocking';
+import Scratch from './scratch';
+import Rainny from './rainny';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -14,6 +17,9 @@ root.render(
       <Routes>
         <Route path='/' element={<App/>}/>
         <Route path='/firework' element={<Firework/>}/>
+        <Route path='/flocking' element={<Flocking/>}/>
+        <Route path='/scratch' element={<Scratch />}/>
+        <Route path='/rainny' element={<Rainny />}/>
       </Routes>
      </div>
     </BrowserRouter>
