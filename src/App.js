@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './App.css';
 import { FaRegSmileBeam } from "react-icons/fa";
 import { renderToStaticMarkup } from 'react-dom/server';
+import Nav from './componet/nav';
 
 function App() {
 
@@ -133,18 +134,7 @@ function App() {
         setup={setup}
         draw={draw}
       />
-      <button onClick={() => navigate('/firework')}>
-        煙火
-      </button>
-      <button onClick={() => navigate('/flocking')}>
-        群聚
-      </button>
-      <button onClick={() => navigate('/scratch')}>
-        刮刮樂
-      </button>
-      <button onClick={() => navigate('/rainny')}>
-        下雨
-      </button>
+      <Nav/>
     </div>
   );
 }

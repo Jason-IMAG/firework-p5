@@ -2,7 +2,8 @@ import Sketch from 'react-p5';
 import Matter from 'matter-js';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
-import './App.css';
+import '../App.css';
+import Nav from '../componet/nav';
 
 
 function Firework(){
@@ -171,15 +172,23 @@ function Firework(){
 
 		}
 
+		const windowResized = (p5) => {
+			// 當視窗大小改變時，重新設置畫布大小
+			p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+			p5.background(0);
+		};
 
     
 
     return(
 			<div className="App">
-        <Sketch setup={setup} draw={draw} mousePressed={mousePressed}/>
-				<button onClick={() => navigate('/')}>
-          返回首頁
-      	</button>
+        <Sketch 
+				  setup={setup} 
+					draw={draw} 
+					mousePressed={mousePressed}
+					windowResized={windowResized}
+					/>
+				<Nav/>
 			</div>
     )
 }

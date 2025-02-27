@@ -3,10 +3,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Firework from './firework';
-import Flocking from './flocking';
-import Scratch from './scratch';
-import Rainny from './rainny';
+import Firework from './pages/firework';
+import Flocking from './pages/flocking';
+import Scratch from './pages/scratch';
+import Rainny from './pages/rainny';
+import Snow from './pages/snow';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -20,6 +21,7 @@ root.render(
         <Route path='/flocking' element={<Flocking/>}/>
         <Route path='/scratch' element={<Scratch />}/>
         <Route path='/rainny' element={<Rainny />}/>
+        <Route path='/snow' element={<Snow />}/>
       </Routes>
      </div>
     </BrowserRouter>

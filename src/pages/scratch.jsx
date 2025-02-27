@@ -1,7 +1,8 @@
 import Sketch from 'react-p5';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
-import './App.css';
+import '../App.css';
+import Nav from '../componet/nav';
 
 function Scratch(){
   const navigate = useNavigate();
@@ -37,10 +38,10 @@ function Scratch(){
     //創建覆蓋的銀灰層
     topLayerRef.current = p5.createGraphics(imgWidthRef.current, imgHeightRef.current);
     topLayerRef.current.background(192,192,192);
-    topLayerRef.current.fill(255);
-    topLayerRef.current.textSize(30);
-    topLayerRef.current.textFont('Arial');
-    topLayerRef.current.textAlign(p5.CENTER, p5.CENTER);
+    topLayerRef.current.fill(255); //字的顏色
+    topLayerRef.current.textSize(30); //字的大小
+    topLayerRef.current.textFont('Arial'); //字體
+    topLayerRef.current.textAlign(p5.CENTER, p5.CENTER); //文字位置
     topLayerRef.current.text('刮刮樂ABC', imgWidthRef.current/2, imgHeightRef.current/2)
 
     //繪製圖片及銀灰層
@@ -77,7 +78,7 @@ function Scratch(){
   const handleErase = (p5, x, y) => {
     if (!imageReady || !topLayerRef.current) return;
     
-    const brushSize = 30;  // 觸控時使用稍大的筆刷
+    const brushSize = 20;  // 觸控時使用稍大的筆刷
     
     // 計算相對於覆蓋層的位置
     const relativeX = x - imgXRef.current;
@@ -101,12 +102,12 @@ function Scratch(){
 
 
   const draw = (p5) => {
-
+    //每10幀計算一次刮除百分比
     if (p5.frameCount % 10 === 0) {
       const erasedPixels = calculateErasedPixels();
       setErasedPercentage(erasedPixels);
     }
-
+    //滑鼠或觸控事件
     if (isInteractingRef.current) {
       handleErase(p5, p5.mouseX, p5.mouseY);
     }
@@ -171,19 +172,17 @@ function Scratch(){
   return(
     <div>
       <Sketch 
-      setup={setup}
-      draw={draw} 
-      preload={preload}
-      mousePressed={mousePressed}
-      mouseReleased={mouseReleased}
-      touchStarted={touchStarted}
-      touchMoved={touchMoved}
-      touchEnded={touchEnded}
-      windowResized={windowResized}
+        setup={setup}
+        draw={draw} 
+        preload={preload}
+        mousePressed={mousePressed}
+        mouseReleased={mouseReleased}
+        touchStarted={touchStarted}
+        touchMoved={touchMoved}
+        touchEnded={touchEnded}
+        windowResized={windowResized}
       />
-      <button onClick={() => navigate('/')}>
-        返回首頁
-      </button>
+      <Nav/>
     </div>
   )
 }

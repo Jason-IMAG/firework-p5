@@ -1,6 +1,7 @@
 import Sketch from "react-p5";
-import "./App.css";
+import "../App.css";
 import { useNavigate } from 'react-router-dom';
+import Nav from '../componet/nav';
 
 function Rainny() {
   let drops = [];
@@ -140,9 +141,7 @@ function Rainny() {
         unmount={cleanup}
         windowResized={windowResized}
       />
-      <button onClick={() => navigate('/')}>
-        返回首頁
-      </button>
+      <Nav/>
     </div>
   );
 }
