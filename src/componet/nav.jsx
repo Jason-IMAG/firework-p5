@@ -20,6 +20,12 @@ function Nav(){
       <button onClick={() => navigate('/snow')}>
         下雪
       </button>
+      <button onClick={() => navigate('/imageP5')}>
+        疊圖 p5
+      </button>
+      <button onClick={() => navigate('/imageCanvas')}>
+        疊圖 canvas
+      </button>
     </div>
   )
 }

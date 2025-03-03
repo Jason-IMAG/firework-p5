@@ -8,7 +8,8 @@ import Flocking from './pages/flocking';
 import Scratch from './pages/scratch';
 import Rainny from './pages/rainny';
 import Snow from './pages/snow';
-
+import ImageP5 from './pages/imageP5';
+import ImageCanvas from './pages/imageCanvas';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -22,6 +23,8 @@ root.render(
         <Route path='/scratch' element={<Scratch />}/>
         <Route path='/rainny' element={<Rainny />}/>
         <Route path='/snow' element={<Snow />}/>
+        <Route path='/imageP5' element={<ImageP5/>}/>
+        <Route path='/imageCanvas' element={<ImageCanvas/>}/>
       </Routes>
      </div>
     </BrowserRouter>
